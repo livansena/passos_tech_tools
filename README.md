@@ -1,24 +1,67 @@
-# README
+# Passos Tech Tools
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Premium ecommerce application built with Ruby on Rails and Tailwind CSS.
 
-Things you may want to cover:
+## Overview
 
-* Ruby version
+Passos Tech Tools is a modern ecommerce project focused on creating a premium shopping experience with a futuristic dark interface and responsive design.
 
-* System dependencies
+The project was developed to strengthen backend and full stack development skills using Ruby on Rails while applying modern UI concepts inspired by real ecommerce platforms.
 
-* Configuration
+## Features
 
-* Database creation
+* Product listing page
+* Product details page
+* Functional shopping cart
+* Add to cart system
+* Remove item from cart
+* Automatic cart total calculation
+* Quantity management
+* Active Storage image upload
+* Responsive modern UI
+* Tailwind CSS styling
+* Premium dark theme
 
-* Database initialization
+## Technologies Used
 
-* How to run the test suite
+* Ruby on Rails
+* PostgreSQL
+* Tailwind CSS
+* Active Storage
+* HTML
+* CSS
+* JavaScript
 
-* Services (job queues, cache servers, search engines, etc.)
+## Screenshots
 
-* Deployment instructions
+### Products Page
 
-* ...
+Modern product showcase with premium card design.
+
+### Product Details
+
+Detailed product page with technical specifications.
+
+### Shopping Cart
+
+Functional cart system with dynamic total calculation.
+
+## Future Improvements
+
+* User authentication
+* Stripe payment integration
+* Order system
+* Quantity increase/decrease inside cart
+* Checkout page
+* Session persistence
+* Admin dashboard
+* Product search and filters
+
+## Author
+
+Livan Sena
+
+Backend & Full Stack Developer focused on scalable applications, automation, and modern web technologies.
+
+GitHub:
+https://github.com/livansena
