@@ -1,0 +1,91 @@
+<div class="min-h-screen bg-slate-950 text-white px-6 py-24">
+  <div class="max-w-7xl mx-auto">
+
+    <%= link_to "← Continue Shopping", products_path, class: "text-green-400 hover:text-green-300 transition" %>
+
+    <div class="mt-12 mb-12">
+      <p class="text-green-400 uppercase tracking-[0.3em] text-sm mb-4">
+        Shopping Cart
+      </p>
+
+      <h1 class="text-5xl font-black mb-6">
+        Your Cart
+      </h1>
+
+      <p class="text-slate-400 text-lg">
+        Review your selected tools before checkout.
+      </p>
+    </div>
+
+    <div class="bg-slate-900 border border-white/10 rounded-3xl p-8">
+      <% if @cart && @cart.cart_items.any? %>
+
+        <div class="space-y-6">
+          <% @cart.cart_items.each do |item| %>
+
+            <div class="flex items-center justify-between border border-white/10 rounded-2xl p-6 bg-slate-950">
+              <div class="flex items-center gap-6">
+
+                <% if item.product.image.attached? %>
+                  <%= image_tag item.product.image, class: "w-24 h-24 object-cover rounded-xl" %>
+                <% end %>
+
+                <div>
+                  <p class="text-green-400 text-sm uppercase tracking-[0.2em] mb-2">
+                    <%= item.product.category %>
+                  </p>
+
+                  <h2 class="text-2xl font-bold mb-2">
+                    <%= item.product.name %>
+                  </h2>
+
+                  <p class="text-slate-400">
+                    Quantity: <%= item.quantity %>
+                  </p>
+                  <%= button_to "Remove",
+                  cart_item_path(item),
+                  method: :delete,
+                  class: "mt-4 text-red-400 hover:text-red-300 text-sm transition" %>
+                </div>
+              </div>
+
+              <p class="text-3xl font-black text-green-400">
+                €<%= number_with_precision(item.product.price, precision: 2) %>
+              </p>
+            </div>
+
+          <% end %>
+        </div>
+
+        <div class="border-t border-white/10 pt-8 mt-10 flex items-center justify-between">
+
+  <div>
+    <p class="text-slate-400 text-sm mb-2">
+      Total
+    </p>
+
+    <h2 class="text-5xl font-black text-green-400">
+      €<%= number_with_precision(
+      @cart.cart_items.sum { |item| item.product.price * item.quantity },
+      precision: 2
+      ) %>
+    </h2>
+  </div>
+
+  <button class="bg-green-400 text-black px-10 py-4 rounded-full font-bold hover:scale-105 transition">
+    Checkout
+  </button>
+
+</div>
+
+      <% else %>
+
+        <p class="text-slate-400">
+          Your cart is currently empty.
+        </p>
+
+      <% end %>
+    </div>
+
+  </div>
+</div>

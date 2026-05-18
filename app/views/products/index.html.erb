@@ -1,0 +1,73 @@
+<div class="min-h-screen bg-slate-950 text-white px-6 py-20">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="mb-14">
+
+      <%= link_to "← Back to Home", root_path,
+      class: "inline-block text-green-400 mb-10 hover:text-green-300 transition" %>
+
+      <p class="text-green-400 uppercase tracking-[0.3em] text-sm mb-4">
+        Passos Tech Tools
+      </p>
+
+      <h1 class="text-5xl font-black mb-4">
+        All Products
+      </h1>
+
+      <p class="text-slate-400 text-lg">
+        Premium tools and workspace accessories for modern professionals.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <% @products.each do |product| %>
+
+        <%= link_to product_path(product),
+        class: "group bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden hover:border-green-400/50 transition duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(74,222,128,0.15)]" do %>
+
+          <% if product.image.attached? %>
+            <%= image_tag product.image,
+            class: "w-full h-64 object-cover group-hover:scale-105 transition duration-500" %>
+          <% end %>
+
+          <div class="p-6 flex flex-col h-[360px]">
+
+            <p class="text-green-400 uppercase tracking-[0.2em] text-xs mb-3">
+              <%= product.category %>
+            </p>
+
+            <h2 class="text-2xl font-bold mb-3">
+              <%= product.name %>
+            </h2>
+
+            <p class="text-slate-400 text-sm mb-6">
+              <%= product.description %>
+            </p>
+
+            <div class="text-yellow-400 text-sm mb-6">
+              ★★★★★
+            </div>
+
+            <div class="flex items-center justify-between mt-auto">
+
+              <span class="text-3xl font-black text-green-400">
+                €<%= number_with_precision(product.price, precision: 2) %>
+              </span>
+
+              <button class="bg-green-400 text-slate-950 px-4 py-2 rounded-full text-sm font-bold hover:bg-green-300 transition">
+                Add to Cart
+            </button>
+
+            </div>
+
+          </div>
+
+        <% end %>
+
+      <% end %>
+
+    </div>
+
+  </div>
+</div>
