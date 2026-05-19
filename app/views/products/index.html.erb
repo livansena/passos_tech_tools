@@ -17,6 +17,31 @@
       <p class="text-slate-400 text-lg">
         Premium tools and workspace accessories for modern professionals.
       </p>
+
+      <div class="flex flex-wrap gap-4 mt-10">
+
+  <%= link_to "All",
+  products_path,
+  class: "px-6 py-3 rounded-full bg-slate-900 border border-white/10 hover:border-green-400 hover:text-green-400 transition" %>
+
+  <%= link_to "Workspace Lighting",
+  products_path(category: "Workspace Lighting"),
+  class: "px-6 py-3 rounded-full bg-slate-900 border border-white/10 hover:border-green-400 hover:text-green-400 transition" %>
+
+  <%= link_to "Organization",
+  products_path(category: "Organization"),
+  class: "px-6 py-3 rounded-full bg-slate-900 border border-white/10 hover:border-green-400 hover:text-green-400 transition" %>
+
+  <%= link_to "Tactical Equipment",
+  products_path(category: "Tactical Equipment"),
+  class: "px-6 py-3 rounded-full bg-slate-900 border border-white/10 hover:border-green-400 hover:text-green-400 transition" %>
+
+  <%= link_to "Workspace Setup",
+  products_path(category: "Workspace Setup"),
+  class: "px-6 py-3 rounded-full bg-slate-900 border border-white/10 hover:border-green-400 hover:text-green-400 transition" %>
+
+</div>
+
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -1,7 +1,14 @@
 class ApplicationController < ActionController::Base
-  # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern
 
-  # Changes to the importmap will invalidate the etag for HTML responses
   stale_when_importmap_changes
+
+  before_action :set_cart_count
+
+  private
+
+  def set_cart_count
+    cart = Cart.first
+    @cart_count = cart ? cart.cart_items.sum(:quantity) : 0
+  end
 end

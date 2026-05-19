@@ -13,9 +13,7 @@
           Home
         </a>
 
-        <a href="#" class="hover:text-green-400 transition">
-          Products
-        </a>
+        <%= link_to "Products", products_path, class: "hover:text-green-400 transition" %>
 
         <a href="#" class="hover:text-green-400 transition">
           Categories
@@ -28,6 +26,18 @@
         <a href="#" class="hover:text-green-400 transition">
           Contact
         </a>
+
+        <%= link_to cart_path, class: "relative flex items-center justify-center w-10 h-10 hover:text-green-400 transition" do %>
+
+  <i class="text-xl">🛍️</i> 
+
+  <% if @cart_count > 0 %>
+  <span class="absolute -top-2 -right-2 bg-green-400 text-black text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center border-2 border-slate-800 shadow-lg">
+    <%= @cart_count %>
+  </span>
+<% end %>
+
+<% end %>
 
       </div>
 
