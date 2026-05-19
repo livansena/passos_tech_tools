@@ -39,9 +39,23 @@
                     <%= item.product.name %>
                   </h2>
 
-                  <p class="text-slate-400">
-                    Quantity: <%= item.quantity %>
-                  </p>
+                  <div class="flex items-center gap-4 mt-3">
+
+  <%= button_to "-",
+  decrease_cart_item_path(item),
+  method: :patch,
+  class: "w-8 h-8 rounded-full bg-slate-800 border border-white/10 hover:border-green-400 transition" %>
+
+  <span class="font-bold">
+    <%= item.quantity %>
+  </span>
+
+  <%= button_to "+",
+  increase_cart_item_path(item),
+  method: :patch,
+  class: "w-8 h-8 rounded-full bg-slate-800 border border-white/10 hover:border-green-400 transition" %>
+
+</div>
                   <%= button_to "Remove",
                   cart_item_path(item),
                   method: :delete,

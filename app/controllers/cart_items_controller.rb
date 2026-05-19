@@ -20,6 +20,28 @@ class CartItemsController < ApplicationController
     redirect_to cart_path
   end
 
+  def increase
+    cart_item = CartItem.find(params[:id])
+
+    cart_item.quantity += 1
+    cart_item.save
+
+    redirect_to cart_path
+  end
+
+  def decrease
+    cart_item = CartItem.find(params[:id])
+
+    if cart_item.quantity > 1
+      cart_item.quantity -= 1
+      cart_item.save
+    else
+      cart_item.destroy
+    end
+
+    redirect_to cart_path
+  end
+
   def destroy
     cart_item = CartItem.find(params[:id])
     cart_item.destroy

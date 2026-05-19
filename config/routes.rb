@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   resource :cart, only: [:show]
 
-  resources :cart_items, only: [:create, :destroy]
+  resources :cart_items, only: [:create, :destroy] do
+    member do
+      patch :increase
+      patch :decrease
+    end
+  end
+
   resources :products, only: [:index, :show]
 
   root "pages#home"
