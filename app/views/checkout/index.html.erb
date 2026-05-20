@@ -1,0 +1,110 @@
+<div class="min-h-screen bg-slate-950 text-white px-6 py-24">
+
+  <div class="max-w-7xl mx-auto">
+
+    <%= link_to "← Back to Cart", cart_path,
+    class: "text-green-400 hover:text-green-300 transition" %>
+
+    <div class="mt-12 mb-12">
+
+      <p class="text-green-400 uppercase tracking-[0.3em] text-sm mb-4">
+        Checkout
+      </p>
+
+      <h1 class="text-5xl font-black mb-6">
+        Complete Your Order
+      </h1>
+
+      <p class="text-slate-400 text-lg">
+        Review your order details and continue to payment.
+      </p>
+
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+      <div class="bg-slate-900 border border-white/10 rounded-3xl p-8">
+
+        <h2 class="text-2xl font-bold mb-8">
+          Shipping Information
+        </h2>
+
+        <div class="space-y-6">
+
+          <input
+            type="text"
+            placeholder="Full Name"
+            class="w-full bg-slate-950 border border-white/10 rounded-2xl px-6 py-4"
+          >
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="w-full bg-slate-950 border border-white/10 rounded-2xl px-6 py-4"
+          >
+
+          <input
+            type="text"
+            placeholder="Shipping Address"
+            class="w-full bg-slate-950 border border-white/10 rounded-2xl px-6 py-4"
+          >
+
+        </div>
+
+      </div>
+
+      <div class="bg-slate-900 border border-white/10 rounded-3xl p-8">
+
+        <h2 class="text-2xl font-bold mb-8">
+          Order Summary
+        </h2>
+
+        <% @cart.cart_items.each do |item| %>
+
+  <div class="flex justify-between items-center mb-4">
+
+    <div>
+      <p class="font-bold">
+        <%= item.product.name %>
+      </p>
+
+      <p class="text-sm text-slate-400">
+        Qty: <%= item.quantity %>
+      </p>
+    </div>
+
+    <span class="font-bold text-green-400">
+      €<%= number_with_precision(item.product.price * item.quantity, precision: 2) %>
+    </span>
+
+  </div>
+
+<% end %>
+
+        <div class="border-t border-white/10 pt-8">
+
+          <div class="flex justify-between mb-6">
+
+            <span class="text-slate-400">
+              Subtotal
+            </span>
+
+            <span class="font-bold text-green-400">
+  €<%= number_with_precision(@total, precision: 2) %>
+</span>
+
+          </div>
+
+          <button class="w-full bg-green-400 text-black py-5 rounded-2xl font-bold hover:scale-[1.02] transition">
+            Proceed to Payment
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

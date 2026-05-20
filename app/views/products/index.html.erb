@@ -42,8 +42,30 @@
 
 </div>
 
-    </div>
+<form action="<%= products_path %>" method="get" class="mt-8 mb-10">
 
+  <div class="flex gap-4">
+
+    <input
+      type="text"
+      name="query"
+      value="<%= params[:query] %>"
+      placeholder="Search products..."
+      class="flex-1 bg-slate-900 border border-white/10 rounded-full px-6 py-4 text-white outline-none focus:border-green-400"
+    >
+
+    <button
+      type="submit"
+      class="bg-green-400 text-black px-8 py-4 rounded-full font-bold hover:scale-105 transition"
+    >
+      Search
+    </button>
+
+  </div>
+
+</form>
+
+  
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
       <% @products.each do |product| %>
