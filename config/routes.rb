@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "checkout", to: "checkout#index"
+  post "checkout", to: "checkout#create"
   resource :cart, only: [:show]
 
   resources :cart_items, only: [:create, :destroy] do

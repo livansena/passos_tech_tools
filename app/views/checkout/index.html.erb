@@ -1,110 +1,138 @@
 <div class="min-h-screen bg-slate-950 text-white px-6 py-24">
-
   <div class="max-w-7xl mx-auto">
 
-    <%= link_to "← Back to Cart", cart_path,
-    class: "text-green-400 hover:text-green-300 transition" %>
+    <%= link_to "← Volver al carrito", cart_path,
+      class: "text-green-400 hover:text-green-300 transition" %>
 
     <div class="mt-12 mb-12">
-
       <p class="text-green-400 uppercase tracking-[0.3em] text-sm mb-4">
         Checkout
       </p>
 
       <h1 class="text-5xl font-black mb-6">
-        Complete Your Order
+        Completa tu pedido
       </h1>
 
       <p class="text-slate-400 text-lg">
-        Review your order details and continue to payment.
-      </p>
-
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-
-      <div class="bg-slate-900 border border-white/10 rounded-3xl p-8">
-
-        <h2 class="text-2xl font-bold mb-8">
-          Shipping Information
-        </h2>
-
-        <div class="space-y-6">
-
-          <input
-            type="text"
-            placeholder="Full Name"
-            class="w-full bg-slate-950 border border-white/10 rounded-2xl px-6 py-4"
-          >
-
-          <input
-            type="email"
-            placeholder="Email Address"
-            class="w-full bg-slate-950 border border-white/10 rounded-2xl px-6 py-4"
-          >
-
-          <input
-            type="text"
-            placeholder="Shipping Address"
-            class="w-full bg-slate-950 border border-white/10 rounded-2xl px-6 py-4"
-          >
-
-        </div>
-
-      </div>
-
-      <div class="bg-slate-900 border border-white/10 rounded-3xl p-8">
-
-        <h2 class="text-2xl font-bold mb-8">
-          Order Summary
-        </h2>
-
-        <% @cart.cart_items.each do |item| %>
-
-  <div class="flex justify-between items-center mb-4">
-
-    <div>
-      <p class="font-bold">
-        <%= item.product.name %>
-      </p>
-
-      <p class="text-sm text-slate-400">
-        Qty: <%= item.quantity %>
+        Revisa los datos de tu pedido y continúa con el pago.
       </p>
     </div>
 
-    <span class="font-bold text-green-400">
-      €<%= number_with_precision(item.product.price * item.quantity, precision: 2) %>
-    </span>
+    <%= form_with url: checkout_path, method: :post, local: true do %>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
 
-  </div>
+        <div class="bg-slate-900 border border-white/10 rounded-3xl p-8">
+          <h2 class="text-2xl font-bold mb-8">
+            Información de envío
+          </h2>
 
-<% end %>
+          <div class="space-y-6">
+            <%= text_field_tag :full_name, nil,
+              required: true,
+              placeholder: "Nombre completo",
+              class: "w-full bg-slate-950 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-green-400" %>
 
-        <div class="border-t border-white/10 pt-8">
+            <%= email_field_tag :email, nil,
+              required: true,
+              placeholder: "Correo electrónico",
+              class: "w-full bg-slate-950 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-green-400" %>
 
-          <div class="flex justify-between mb-6">
+            <%= text_field_tag :shipping_address, nil,
+              required: true,
+              placeholder: "Dirección de envío",
+              class: "w-full bg-slate-950 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-green-400" %>
 
-            <span class="text-slate-400">
-              Subtotal
-            </span>
+            <%= text_field_tag :country, "España",
+              readonly: true,
+              class: "w-full bg-slate-950 border border-white/10 rounded-2xl px-6 py-4 text-slate-400" %>
 
-            <span class="font-bold text-green-400">
-  €<%= number_with_precision(@total, precision: 2) %>
-</span>
+            <%= text_field_tag :postal_code, nil,
+              required: true,
+              placeholder: "Código postal",
+              class: "w-full bg-slate-950 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-green-400" %>
 
+            <%= text_field_tag :city, nil,
+              required: true,
+              placeholder: "Ciudad",
+              class: "w-full bg-slate-950 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-green-400" %>
+
+            <div class="pt-6">
+              <h3 class="text-xl font-bold mb-6">
+                Método de pago
+              </h3>
+
+              <div class="space-y-4">
+                <label class="flex items-center gap-4 bg-slate-950 border border-white/10 rounded-2xl p-4 cursor-pointer hover:border-green-400 transition">
+                  <%= radio_button_tag :payment_method, "Credit Card", true %>
+                  <span>💳 Tarjeta de crédito</span>
+                </label>
+
+                <label class="flex items-center gap-4 bg-slate-950 border border-white/10 rounded-2xl p-4 cursor-pointer hover:border-green-400 transition">
+                  <%= radio_button_tag :payment_method, "PayPal" %>
+                  <span>PayPal</span>
+                </label>
+
+                <label class="flex items-center gap-4 bg-slate-950 border border-white/10 rounded-2xl p-4 cursor-pointer hover:border-green-400 transition">
+                  <%= radio_button_tag :payment_method, "SEPA Bank Transfer" %>
+                  <span>Transferencia bancaria SEPA</span>
+                </label>
+              </div>
+            </div>
           </div>
+        </div>
 
-          <button class="w-full bg-green-400 text-black py-5 rounded-2xl font-bold hover:scale-[1.02] transition">
-            Proceed to Payment
-          </button>
+        <div class="bg-slate-900 border border-white/10 rounded-3xl p-8">
+          <h2 class="text-2xl font-bold mb-8">
+            Resumen del pedido
+          </h2>
 
+          <% @cart.cart_items.each do |item| %>
+            <div class="flex justify-between items-center mb-4">
+              <div>
+                <p class="font-bold">
+                  <%= item.product.name %>
+                </p>
+
+                <p class="text-sm text-slate-400">
+                  Cantidad: <%= item.quantity %>
+                </p>
+              </div>
+
+              <span class="font-bold text-green-400">
+                €<%= number_with_precision(item.product.price * item.quantity, precision: 2) %>
+              </span>
+            </div>
+          <% end %>
+
+          <div class="border-t border-white/10 pt-8">
+            <div class="space-y-4">
+              <div class="flex justify-between">
+                <span class="text-slate-400">Subtotal</span>
+                <span>€<%= number_with_precision(@subtotal, precision: 2) %></span>
+              </div>
+
+              <div class="flex justify-between">
+                <span class="text-slate-400">Envío</span>
+                <span>€<%= number_with_precision(@shipping, precision: 2) %></span>
+              </div>
+
+              <div class="flex justify-between text-xl font-bold text-green-400 border-t border-white/10 pt-4">
+                <span>Total</span>
+                <span>€<%= number_with_precision(@total, precision: 2) %></span>
+              </div>
+            </div>
+
+            <%= submit_tag "Finalizar pedido",
+              class: "w-full bg-green-400 text-black py-5 rounded-2xl font-bold hover:scale-[1.02] transition mt-8" %>
+
+            <p class="text-center text-sm text-slate-400 mt-4">
+              Al finalizar tu compra, aceptas nuestros términos y políticas.
+            </p>
+          </div>
         </div>
 
       </div>
-
-    </div>
+    <% end %>
 
   </div>
-
 </div>

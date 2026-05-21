@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  full_name: MyString
+  email: MyString
+  shipping_address: MyString
+  payment_method: MyString
+  subtotal: 9.99
+  shipping: 9.99
+  total: 9.99
+
+two:
+  full_name: MyString
+  email: MyString
+  shipping_address: MyString
+  payment_method: MyString
+  subtotal: 9.99
+  shipping: 9.99
+  total: 9.99
