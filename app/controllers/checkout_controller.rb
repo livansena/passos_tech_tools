@@ -20,7 +20,7 @@ class CheckoutController < ApplicationController
     @shipping = @subtotal > 0 ? 8.90 : 0
     @total = @subtotal + @shipping
 
-    order = Order.create(
+    @order = Order.create(
       full_name: params[:full_name],
       email: params[:email],
       shipping_address: params[:shipping_address],
@@ -33,7 +33,17 @@ class CheckoutController < ApplicationController
       total: @total
     )
 
-    redirect_to checkout_path
+    @cart.cart_items.each do |item|
+  OrderItem.create(
+    order: @order,
+    product: item.product,
+    quantity: item.quantity,
+    price: item.product.price
+  )
+end
+    @cart.cart_items.destroy_all
+    
+    redirect_to orders_confirmation_path(order_id: @order.id)
   end
 
   private

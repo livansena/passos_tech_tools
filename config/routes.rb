@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "admin/orders"
+  get "orders/confirmation"
   get "checkout", to: "checkout#index"
   post "checkout", to: "checkout#create"
   resource :cart, only: [:show]

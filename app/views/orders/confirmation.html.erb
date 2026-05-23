@@ -1,0 +1,30 @@
+<div class="min-h-screen bg-slate-950 text-white flex items-center justify-center px-6">
+
+  <div class="max-w-2xl w-full bg-slate-900 border border-white/10 rounded-3xl p-12 text-center mx-auto">
+
+    <div class="text-6xl mb-8">
+      ✅
+    </div>
+
+    <h1 class="text-5xl font-black mb-6">
+      ¡Pedido confirmado!
+    </h1>
+
+    <p class="text-green-400 text-xl font-bold mb-6">
+    Pedido #<%= @order.order_number %>
+    </p>
+
+    <p class="text-slate-400 text-lg mb-10 px-6">
+      Gracias por tu compra. Tu pedido ha sido recibido correctamente.
+    </p>
+
+    <div class="space-y-4">
+
+      <%= link_to "Seguir comprando", products_path,
+      class: "block w-full bg-green-400 text-black py-5 rounded-2xl font-bold hover:scale-[1.02] transition" %>
+
+    </div>
+
+  </div>
+
+</div>
