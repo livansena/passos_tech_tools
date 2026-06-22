@@ -1,262 +1,339 @@
 # Passos Tech Tools
 
-## From Ecommerce MVP to Operations Management Platform
+## Asset, Maintenance & Operations Management Platform
 
-Passos Tech Tools is a Ruby on Rails project that started as a complete ecommerce application and is now evolving into an Operations Management Platform focused on asset management, maintenance workflows, inventory control, and operational processes.
+Passos Tech Tools is a Ruby on Rails application that began as a complete Ecommerce MVP and is now evolving into an Operations Management Platform focused on asset management, maintenance workflows, inventory control, procurement, and operational processes.
 
-The project represents my transition from industrial operations to software engineering, combining more than 15 years of experience in maintenance, quality assurance, procurement, logistics, and infrastructure with modern backend development practices.
+The project combines modern backend engineering practices with more than 15 years of real-world experience in industrial maintenance, quality assurance, logistics, procurement, and operational infrastructure.
 
 ---
 
-## Project Evolution
+## Project Status
 
-### Phase 1 — Ecommerce MVP
+### ✅ Ecommerce MVP Completed
 
-The project was originally developed as a premium ecommerce platform to strengthen backend development skills and gain hands-on experience with:
+The first phase of the project successfully delivered a fully functional ecommerce application and achieved its learning objectives.
 
-* Ruby on Rails
-* PostgreSQL
-* Active Record
-* MVC Architecture
-* Tailwind CSS
-* Business Workflows
-* Database Modeling
+### 🚧 Operations Platform In Development
 
-The ecommerce reached a fully functional MVP stage and successfully achieved its learning objectives.
+The current focus is building a scalable SaaS platform for operational management, maintenance, inventory, and business processes.
 
-### Implemented Features
+Current Focus:
+
+- Asset Management
+- Maintenance Management
+- Domain Modeling
+- Software Architecture
+- Backend Engineering
+
+---
+
+# Project Evolution
+
+## Phase 1 — Ecommerce MVP (Completed)
+
+The project was originally created to strengthen backend development skills and gain practical experience with:
+
+- Ruby on Rails
+- PostgreSQL
+- Active Record
+- MVC Architecture
+- Tailwind CSS
+- Business Workflows
+- Database Modeling
+
+### Features Implemented
 
 #### Product Catalog
 
-* Product listing
-* Product categories
-* Product details page
-* Product search
-* Product filtering
+- Product listing
+- Product categories
+- Product details page
+- Product search
+- Product filtering
 
 #### Shopping Experience
 
-* Add to cart
-* Remove from cart
-* Quantity management
-* Dynamic cart updates
-* Automatic total calculation
+- Add to cart
+- Remove from cart
+- Quantity management
+- Dynamic cart updates
+- Automatic total calculation
 
-#### Checkout Process
+#### Checkout
 
-* Customer information
-* Shipping information
-* Multiple payment methods
-* Order confirmation
+- Customer information
+- Shipping information
+- Multiple payment methods
+- Order confirmation
 
 #### Order Management
 
-* Orders persistence
-* Order items persistence
-* Automatic order numbering
-* Order confirmation page
-
-#### Administrative Features
-
-* Orders dashboard
-* Order tracking
-* Customer information management
+- Orders persistence
+- Order items persistence
+- Automatic order numbering
+- Administrative dashboard
+- Order tracking
 
 #### Technical Features
 
-* PostgreSQL database
-* Active Storage
-* Responsive design
-* Modern dark UI
-* Docker support
+- PostgreSQL
+- Active Storage
+- Docker
+- Responsive Design
+- Tailwind CSS
+- Modern Dark UI
 
 ---
 
-## Why The Project Changed
+# Why The Project Changed
 
-Although the ecommerce MVP successfully demonstrated Ruby on Rails fundamentals, it did not leverage my strongest professional advantage.
+Although the Ecommerce MVP successfully demonstrated Ruby on Rails fundamentals, it did not fully leverage my strongest professional advantage.
 
-Before becoming a developer, I spent more than 15 years working in:
+Before transitioning into software development, I spent more than 15 years working in:
 
-* Industrial Maintenance
-* Operations
-* Quality Assurance
-* Procurement
-* Logistics
-* Infrastructure
+- Industrial Maintenance
+- Operations
+- Quality Assurance
+- Procurement
+- Logistics
+- Infrastructure
 
-Instead of building generic portfolio applications, I decided to create software inspired by real operational challenges I experienced throughout my career.
+Instead of building generic portfolio projects, I decided to create software inspired by real operational challenges experienced throughout my professional career.
 
 This strategic shift transformed Passos Tech Tools into a platform focused on solving real business problems.
 
 ---
 
-## Current Vision
+# Current Vision
 
-Passos Tech Tools is evolving into an Operations Management Platform designed to centralize critical operational processes within organizations.
+Passos Tech Tools is evolving into an Operations Management Platform designed to centralize critical operational processes inside organizations.
 
-The platform aims to replace spreadsheets, disconnected tools, and manual workflows through a scalable and maintainable architecture.
-
----
-
-## MVP 2.0 — Operations Platform
-
-### Core Entities
-
-#### Company
-
-Organizations using the platform.
-
-#### User
-
-Technicians, supervisors, managers, and administrators.
-
-#### Location
-
-Production lines, warehouses, workshops, and operational areas.
-
-#### Asset
-
-Machines, tools, equipment, and operational assets.
-
-#### Work Orders
-
-Preventive and corrective maintenance workflows.
-
-#### Audit Logs
-
-Complete event tracking and operational traceability.
+The platform aims to replace spreadsheets, disconnected systems, and manual workflows through scalable software architecture and modern backend engineering practices.
 
 ---
 
-## Roadmap
+# MVP 2.0 — Operations Platform
 
-### Phase 1 — Asset & Maintenance Management
+## Core Modules
 
-* Asset registration
-* Asset categories
-* Locations
-* Asset ownership
-* Work orders
-* Maintenance history
-* Audit trail
+### Asset Management
 
-### Phase 2 — Inventory Management
+Management of:
 
-* Inventory control
-* Stock movements
-* Material tracking
-* Inventory adjustments
+- Equipment
+- Machines
+- Tools
+- Operational Assets
 
-### Phase 3 — Procurement
+Features:
 
-* Purchase requests
-* Quotations
-* Suppliers
-* Purchase orders
-
-### Phase 4 — Operational Dashboards
-
-* Maintenance KPIs
-* Inventory metrics
-* Asset utilization
-* Operational analytics
+- Asset registration
+- Asset categories
+- Locations
+- Ownership tracking
+- Operational status
+- Movement history
 
 ---
 
-## Technical Roadmap
+### Inventory Management
 
-### Backend Engineering
+Features:
 
-* Service Objects
-* Query Objects
-* Policies
-* REST APIs
-* Domain Modeling
-
-### Database
-
-* PostgreSQL
-* Advanced Relationships
-* Constraints
-* Indexing Strategies
-
-### Testing
-
-* RSpec
-* FactoryBot
-* Request Specs
-* Integration Testing
-
-### Infrastructure
-
-* Docker
-* Docker Compose
-* GitHub Actions
-* CI/CD Pipelines
-
-### Cloud
-
-* AWS EC2
-* AWS RDS
-* AWS S3
-* CloudWatch
-
-### Async Processing
-
-* Redis
-* Sidekiq
-* Background Jobs
+- Inventory control
+- Stock movements
+- Material tracking
+- Inventory adjustments
+- Transfer management
 
 ---
 
-## Tech Stack
+### Maintenance Management
 
-### Backend
+Features:
 
-* Ruby
-* Ruby on Rails
-* PostgreSQL
-
-### Frontend
-
-* Hotwire
-* Turbo
-* Stimulus
-* Tailwind CSS
-* JavaScript
-
-### Infrastructure
-
-* Docker
-* Kamal
-* GitHub
-
-### Development Tools
-
-* Git
-* GitHub Actions
-* RSpec
+- Preventive maintenance
+- Corrective maintenance
+- Work orders
+- Maintenance history
+- Maintenance costs
+- Checklists
 
 ---
 
-## Software Engineering Goals
+### Procurement
+
+Features:
+
+- Purchase requests
+- Quotations
+- Suppliers
+- Purchase orders
+- Receiving process
+
+---
+
+### Audit Trail
+
+Features:
+
+- Activity tracking
+- Historical records
+- User actions
+- Operational traceability
+
+---
+
+### Operational Dashboards
+
+Metrics:
+
+- Open work orders
+- Critical inventory
+- Maintenance KPIs
+- Procurement metrics
+- Asset utilization
+- Operational analytics
+
+---
+
+# Domain Model
+
+Main Entities:
+
+- Company
+- User
+- Location
+- Asset
+- Inventory
+- InventoryMovement
+- WorkOrder
+- MaintenancePlan
+- PurchaseRequest
+- PurchaseOrder
+- Supplier
+- AuditLog
+
+---
+
+# Technical Roadmap
+
+## Backend Engineering
+
+- Service Objects
+- Query Objects
+- Policies
+- REST APIs
+- Domain-Driven Design principles
+
+## Database
+
+- PostgreSQL
+- Advanced Relationships
+- Constraints
+- Indexing Strategies
+
+## Testing
+
+- RSpec
+- FactoryBot
+- Request Specs
+- Integration Tests
+
+## Async Processing
+
+- Redis
+- Sidekiq
+- Background Jobs
+
+## Infrastructure
+
+- Docker
+- Docker Compose
+- GitHub Actions
+- CI/CD Pipelines
+
+## Cloud
+
+- AWS EC2
+- AWS RDS
+- AWS S3
+- CloudWatch
+
+---
+
+# Current Architecture
+
+- Ruby on Rails 8
+- PostgreSQL
+- MVC Architecture
+- Active Record
+- Tailwind CSS
+- Hotwire
+- Docker
+
+---
+
+# Future Architecture
+
+- Service Layer Pattern
+- Sidekiq Workers
+- Redis
+- Audit Logs
+- CI/CD Pipeline
+- AWS Deployment
+- Monitoring & Observability
+
+---
+
+# Tech Stack
+
+## Backend
+
+- Ruby
+- Ruby on Rails
+- PostgreSQL
+
+## Frontend
+
+- Hotwire
+- Turbo
+- Stimulus
+- Tailwind CSS
+- JavaScript
+
+## Infrastructure
+
+- Docker
+- Kamal
+- GitHub
+
+## Development Tools
+
+- Git
+- GitHub Actions
+- RSpec
+
+---
+
+# Software Engineering Goals
 
 This project is designed to demonstrate:
 
-* Backend Development
-* Domain Modeling
-* Database Design
-* REST API Development
-* Software Architecture
-* Automated Testing
-* DevOps Practices
-* Cloud Deployment
-* Scalable Application Design
+- Backend Development
+- Domain Modeling
+- Database Design
+- REST API Development
+- Software Architecture
+- Automated Testing
+- DevOps Practices
+- Cloud Deployment
+- Scalable Application Design
 
 ---
 
-## Professional Context
+# Professional Context
 
 Passos Tech Tools is more than a portfolio project.
 
@@ -266,28 +343,24 @@ The goal is to transform real-world operational knowledge into software solution
 
 ---
 
-## Project Status
+# Author
 
-🚧 Active Development
+## Livan Passos
 
-Current Focus:
+Backend Developer focused on:
 
-* Asset Management
-* Maintenance Module
-* Domain Modeling
-* Software Architecture
-
----
-
-## Author
-
-### Livan Passos
-
-Backend Developer focused on Ruby on Rails, PostgreSQL, APIs, and Operational Systems.
+- Ruby on Rails
+- PostgreSQL
+- REST APIs
+- Backend Architecture
+- Operational Systems
 
 LinkedIn:
 https://www.linkedin.com/in/livanpassos/
 
+GitHub:
+https://github.com/livansena
+
 ---
 
-"The tools changed. The mindset did not."
+> "The tools changed. The mindset did not."
